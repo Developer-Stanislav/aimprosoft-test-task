@@ -21,4 +21,3 @@ $registry->set('render', $render);
 $controller = new library\Controller($registry);
 $action = $controller->method;
 $controller->$action();
-

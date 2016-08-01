@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <h1>View page source.s</h1>
-<p>Task "A" main code in view/javascript/task_a.j</p>
+<p>Task "A" main code in view/javascript/task_a.js</p>
 <p>Example in this Page!</p>
 <script type="text/javascript"><!--
     var arr = ['orange', 'banana', 'apple', 'lemon', 'mango'];

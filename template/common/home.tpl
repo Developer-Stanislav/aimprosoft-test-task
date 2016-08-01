@@ -3,7 +3,7 @@
 <div id="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-offset-3 col-sm-6">
+            <div class="col-sm-offset-2 col-sm-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1 class="panel-title"><i class="fa fa-tasks"></i> Tasks</h1>

@@ -1,0 +1,210 @@
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:13:53 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:13:59 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:14:18 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:39:16 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:39:18 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 18:39:42 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:04:33 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:04:35 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:04:50 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:15:48 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:16:14 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:24:17 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:24:57 ===================================
+IIIii <=>||      n=0
+III    ||<=> ii  n=1
+IIIi <=>||    i  n=2
+IIi    ||<=> iI  n=3
+IIii <=>||    I  n=4
+II    ||<=> iiI  n=5
+IIi <=>||    iI  n=6
+Ii    ||<=> iII  n=7
+Iii <=>||    II  n=8
+I    ||<=> iiII  n=9
+Ii <=>||    iII  n=10
+i    ||<=> iIII  n=11
+ii <=>||    III  n=12
+    ||<=> iiIII  n=13
+========================== end 2016-08-01 19:29:13 ===================================
