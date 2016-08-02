@@ -2,4 +2,4 @@
 .gitignore
 /config.php
 /logs
-system/halper/task_e_log.txt
+/system/halper/task_e_log.txt
