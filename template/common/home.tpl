@@ -6,7 +6,7 @@
             <div class="col-sm-offset-2 col-sm-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title"><i class="fa fa-tasks"></i> Tasks</h1>
+                        <h1 class="panel-title" style="margin: 9px 0 7px 0 ;"><i class="fa fa-tasks"></i> <?php echo $title; ?></h1>
                     </div>
                     <div class="panel-body">
                         <table class="table table-bordered table-hover" id="task_b">

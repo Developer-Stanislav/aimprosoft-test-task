@@ -28,14 +28,14 @@ class Controller
         $this->data['tasks'] = array();
 
         $this->data['tasks'][] = array(
-            'name' => 'task A',
+            'name' => 'Task "A"',
             'file_main' => 'view/javascript/task_a.js',
             'description' => 'Develop a JavaScript function analogous to the php-function asort().',
             'href' => HTTP_SERVER . 'index.php?task=task_a',
         );
 
         $this->data['tasks'][] = array(
-            'name' => 'task B',
+            'name' => 'Task "B"',
             'file_main' => 'template/tasks/task_b.tpl',
             'description' => "Create a table 10x10 (10 columns and 10 rows). <br/>
             Fill table cells with some texts. Place a form on the page with <br/>
@@ -47,7 +47,7 @@ class Controller
             'href' => HTTP_SERVER . 'index.php?task=task_b',
         );
         $this->data['tasks'][] = array(
-            'name' => 'task "C", "D"',
+            'name' => 'Task "C"',
             'file_main' => "system/library/controller.php",
             'description' => "<pre><code>" . 'Optimize the following code. Explain what is wrong with it .
 $r = mysql_query(\'SELECT * FROM `products` WHERE `category` = "\'.$category.\'"\');
@@ -55,17 +55,22 @@ $on_stock = 0;
 while ($row = mysql_fetch_assoc($r)) {
     $on_stock = $on_stock + $row[\'on_stock\'];
 }
-echo \'On stock: \'.$on_stock;' . "</code></pre>" .
-                "<pre><small>There is the table ‘gallery’ in the database, keeping information about photos:
+echo \'On stock: \'.$on_stock;' . "</code></pre>",
+            'href' => HTTP_SERVER . 'index.php?task=task_c',
+        );
+        $this->data['tasks'][] = array(
+            'name' => 'Task "D"',
+            'file_main' => "system/library/controller.php",
+            'description' => "<pre><small>There is the table ‘gallery’ in the database, keeping information about photos:
 | id (int) | title (varchar) | author (int) | filename (varchar) | reviews (int) |
 Return the maximal value of the ratio \"the total quantity of photo reviews of an autor / the total
 quantity of photos of this autor\". Utilize OOP, mysqli.</small></pre>",
-            'href' => HTTP_SERVER . 'index.php?task=task_cd',
+            'href' => HTTP_SERVER . 'index.php?task=task_d',
         );
 
 
         $this->data['tasks'][] = array(
-            'name' => 'task E',
+            'name' => 'Task "E"',
             'file_main' => "system/halper/task_e.php<br/>system/halper/config.php<br/>system/halper/task_e_log.txt",
             'description' => "E) On the one bank of the river is a family - father, mother, son and daughter. The family wants to<br/>
 get to the other bank of the river. They found a fisherman with a boat who agreed to borrow a boat<br/>
@@ -96,6 +101,7 @@ how many iterations passed.",
 
     public function task_b()
     {
+        $this->data['title'] = 'Task B';
         $this->data['table'] = array();
         $text = file_get_contents(DIR_SYSTEM . 'halper/words.txt');
         $text = explode("\n", $text);
@@ -120,14 +126,65 @@ how many iterations passed.",
             $this->data['table'][] = $row;
         }
 
-        $this->data['title'] = 'Task B';
         $this->data['header'] = $this->render->get('common/header', $this->data);
         $this->data['footer'] = $this->render->get('common/footer');
         echo $this->render->get('tasks/task_b', $this->data);
     }
 
 
-    public function task_cd()
+    public function task_c()
+    {
+        $this->data['title'] = 'Task C';
+
+        $sql_pre_task = "SELECT DISTINCT(`category`) FROM `products` ORDER BY `category` ASC ";
+        $query = $this->db->query($sql_pre_task);
+        $this->data['result_old'] = array();
+        $time_old = microtime(true);
+
+        foreach ($query->rows as $row) {
+            $sql = "SELECT * FROM `products` WHERE `category` = " . (int)$row['category'];
+            $query_old = $this->db->query($sql);
+            $on_stock = 0;
+            foreach ($query_old->rows as $item) {
+                $on_stock = $on_stock + $item['on_stock'];
+            }
+            $this->data['result_old']['values'][] = array(
+                'category' => $row['category'],
+                'on_stock' => $on_stock,
+                'sql' => $sql,
+            );
+        }
+        $time_old = microtime(true) - $time_old;
+        $this->data['result_old']['time'] = $time_old;
+
+        $this->data['result'] = array();
+        $time = microtime(true);
+
+        foreach ($query->rows as $row) {
+            $sql = "SELECT SUM(`on_stock`) as on_stock FROM `products` WHERE `category` = " . (int)$row['category'];
+            $query_opt = $this->db->query($sql);
+            $this->data['result']['values'][] = array(
+                'category' => $row['category'],
+                'on_stock' => $query_opt->row['on_stock'],
+                'sql' => $sql,
+            );
+        }
+
+        $time = microtime(true) - $time;
+//2016-08-03 12:09:08
+        $this->db->query("INSERT INTO `log` SET `time_old`=".($time_old*1000).", `time_new`=".($time*1000).", `date_added`='".date("Y-m-d H:i:s")."'");
+        $this->data['result']['time'] = $time;
+        $this->data['header'] = $this->render->get('common/header', $this->data);
+        $this->data['footer'] = $this->render->get('common/footer');
+        echo $this->render->get('tasks/task_c', $this->data);
+    }
+
+
+    public function task_c_log(){
+
+    }
+
+    public function task_d()
     {
         /*
          $dir = scandir(DIR_IMAGE.'flags/');
@@ -155,65 +212,21 @@ how many iterations passed.",
 
         */
 
-        $this->data['title'] = 'Task C,D';
+        $this->data['title'] = 'Task D';
         $this->data['max'] = array();
         $this->data['rows'] = array();
         $this->data['author'] = array();
-
         if (isset($this->request->get['author'])) {
             $author_id = $this->request->get['author'];
-
             $sql1 = "SELECT MAX(`reviews`) / COUNT(`author`) AS ratio , `author`, MAX(`reviews`) as reviews FROM `gallery` WHERE `author` =  " . (int)$author_id;
             $query_max = $this->db->query($sql1);
             $this->data['max'] = $query_max->row;
             $this->data['max']['sql'] = $sql1;
-
             $sql2 = "SELECT * FROM `gallery` WHERE `author` = " . (int)$query_max->row['author'] . " AND `reviews`=" . (int)$query_max->row['reviews'];
             $query_strings = $this->db->query($sql2);
             $this->data['rows'] = $query_strings->rows;
             $this->data['rows_sql'] = $sql2;
         } else {
-
-            /* <<<<< TASC "C" <<<<< */
-            $sql_pre_task = "SELECT DISTINCT(`category`) FROM `products` ORDER BY `category` ASC ";
-            $query = $this->db->query($sql_pre_task);
-
-            $this->data['result_old'] = array();
-            $time_old = microtime(true);
-            foreach ($query->rows as $row) {
-                $sql = "SELECT * FROM `products` WHERE `category` = " . (int)$row['category'];
-                $query_old = $this->db->query($sql);
-                $on_stock = 0;
-                foreach ($query_old->rows as $item) {
-                    $on_stock = $on_stock + $item['on_stock'];
-                }
-
-                $this->data['result_old']['values'][] = array(
-                    'category' => $row['category'],
-                    'on_stock' => $on_stock,
-                    'sql' => $sql,
-                );
-            }
-            $time_old = microtime(true) - $time_old;
-            $this->data['result_old']['time'] = $time_old;
-
-            $this->data['result'] = array();
-
-            $time = microtime(true);
-            foreach ($query->rows as $row) {
-                $sql = "SELECT SUM(`on_stock`) as on_stock FROM `products` WHERE `category` = " . (int)$row['category'];
-                $query = $this->db->query($sql);
-                $this->data['result']['values'][] = array(
-                    'category' => $row['category'],
-                    'on_stock' => $query->row['on_stock'],
-                    'sql' => $sql,
-                );
-            }
-            $time = microtime(true) - $time;
-            $this->data['result']['time'] = $time;
-            /* >>>>> TASC "C" >>>>> */
-
-
             $sql = "SELECT DISTINCT(`author`) as author FROM `gallery` ORDER BY `author` ASC";
             $query = $this->db->query($sql);
             foreach ($query->rows as $row) {
@@ -223,7 +236,7 @@ how many iterations passed.",
         }
         $this->data['header'] = $this->render->get('common/header', $this->data);
         $this->data['footer'] = $this->render->get('common/footer');
-        echo $this->render->get('tasks/task_cd', $this->data);
+        echo $this->render->get('tasks/task_d', $this->data);
     }
 
 
