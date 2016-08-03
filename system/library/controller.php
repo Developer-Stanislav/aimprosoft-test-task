@@ -56,7 +56,7 @@ while ($row = mysql_fetch_assoc($r)) {
     $on_stock = $on_stock + $row[\'on_stock\'];
 }
 echo \'On stock: \'.$on_stock;' . "</code></pre>",
-            'href' => HTTP_SERVER . 'index.php?task=task_d',
+            'href' => HTTP_SERVER . 'index.php?task=task_c',
         );
         $this->data['tasks'][] = array(
             'name' => 'Task "D"',
@@ -65,7 +65,7 @@ echo \'On stock: \'.$on_stock;' . "</code></pre>",
 | id (int) | title (varchar) | author (int) | filename (varchar) | reviews (int) |
 Return the maximal value of the ratio \"the total quantity of photo reviews of an autor / the total
 quantity of photos of this autor\". Utilize OOP, mysqli.</small></pre>",
-            'href' => HTTP_SERVER . 'index.php?task=task_c',
+            'href' => HTTP_SERVER . 'index.php?task=task_d',
         );
 
 
@@ -132,13 +132,15 @@ how many iterations passed.",
     }
 
 
-    public function task_c(){
+    public function task_c()
+    {
         $this->data['title'] = 'Task C';
 
         $sql_pre_task = "SELECT DISTINCT(`category`) FROM `products` ORDER BY `category` ASC ";
         $query = $this->db->query($sql_pre_task);
         $this->data['result_old'] = array();
         $time_old = microtime(true);
+
         foreach ($query->rows as $row) {
             $sql = "SELECT * FROM `products` WHERE `category` = " . (int)$row['category'];
             $query_old = $this->db->query($sql);
@@ -157,23 +159,33 @@ how many iterations passed.",
 
         $this->data['result'] = array();
         $time = microtime(true);
+
         foreach ($query->rows as $row) {
             $sql = "SELECT SUM(`on_stock`) as on_stock FROM `products` WHERE `category` = " . (int)$row['category'];
-            $query = $this->db->query($sql);
+            $query_opt = $this->db->query($sql);
             $this->data['result']['values'][] = array(
                 'category' => $row['category'],
-                'on_stock' => $query->row['on_stock'],
+                'on_stock' => $query_opt->row['on_stock'],
                 'sql' => $sql,
             );
         }
+
         $time = microtime(true) - $time;
+//2016-08-03 12:09:08
+        $this->db->query("INSERT INTO `log` SET `time_old`=".($time_old*1000).", `time_new`=".($time*1000).", `date_added`='".date("Y-m-d H:i:s")."'");
         $this->data['result']['time'] = $time;
         $this->data['header'] = $this->render->get('common/header', $this->data);
         $this->data['footer'] = $this->render->get('common/footer');
         echo $this->render->get('tasks/task_c', $this->data);
     }
 
-    public function task_d(){
+
+    public function task_c_log(){
+
+    }
+
+    public function task_d()
+    {
         /*
          $dir = scandir(DIR_IMAGE.'flags/');
          $result = array();

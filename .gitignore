@@ -1,5 +1,4 @@
 .idea
-.gitignore
 /config.php
 /logs
 /system/halper/task_e_log.txt
