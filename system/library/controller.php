@@ -171,18 +171,12 @@ how many iterations passed.",
         }
 
         $time = microtime(true) - $time;
-//2016-08-03 12:09:08
-        $this->db->query("INSERT INTO `log` SET `time_old`=".($time_old*1000).", `time_new`=".($time*1000).", `date_added`='".date("Y-m-d H:i:s")."'");
         $this->data['result']['time'] = $time;
         $this->data['header'] = $this->render->get('common/header', $this->data);
         $this->data['footer'] = $this->render->get('common/footer');
         echo $this->render->get('tasks/task_c', $this->data);
     }
 
-
-    public function task_c_log(){
-
-    }
 
     public function task_d()
     {
